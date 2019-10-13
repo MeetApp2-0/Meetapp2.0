@@ -1,6 +1,6 @@
-require('dotenv/config');
-const jwt = require('jsonwebtoken');
-const { User } = require('../models');
+import 'dotenv/config';
+import jwt from 'jsonwebtoken';
+import { User } from '../models';
 
 class SessionController {
   async create(req, res) {

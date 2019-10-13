@@ -1,4 +1,4 @@
-const { User } = require('../models');
+import { User } from '../models';
 
 class UserController {
   async create(req, res) {
