@@ -2,12 +2,12 @@ const { User } = require('../models');
 
 class UserController {
   async create(req, res) {
-    const { name, email, avatar, password, confirmPassword } = req.body;
+    const { name, email, password, confirmPassword } = req.body;
 
     const emailRegex = /\S+@\S+\.\S+/;
     const passwordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})/;
 
-    if (!name || !email || !avatar || !password || !confirmPassword) {
+    if (!name || !email || !password || !confirmPassword) {
       return res.status(400).send({ errors: ['Preencha todos os dados'] });
     }
 
@@ -36,7 +36,7 @@ class UserController {
 
     await User.create(req.body);
 
-    return res.status(201).send({ name, email, avatar });
+    return res.status(201).send({ name, email });
   }
 }
 
